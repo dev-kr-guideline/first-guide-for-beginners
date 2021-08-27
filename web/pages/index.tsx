@@ -5,16 +5,7 @@ import { DOCUMENT_ROOT } from '../lib/constants';
 import { Markdown } from '../components/markdown';
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(props);
-  return (
-    <div>
-      <main>
-        <Markdown content={props.post} />
-      </main>
-
-      <footer></footer>
-    </div>
-  );
+  return <Markdown content={props.post} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

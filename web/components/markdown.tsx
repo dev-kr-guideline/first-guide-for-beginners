@@ -1,3 +1,4 @@
+import { Box, Container } from '@chakra-ui/react';
 import React from 'react';
 
 interface MarkdownProps {
@@ -5,7 +6,7 @@ interface MarkdownProps {
 }
 
 export const Markdown = ({ content }: MarkdownProps) => {
-  return <div className='md' dangerouslySetInnerHTML={{ __html: content }}></div>;
+  return <Box className='md' dangerouslySetInnerHTML={{ __html: content }}></Box>;
 };
 
 export default Markdown;

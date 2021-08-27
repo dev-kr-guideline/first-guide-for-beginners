@@ -5,7 +5,8 @@ import * as path from 'path';
 import TABLE_OF_CONTENTS from '../lib/toc';
 import { readDocumentScaffold } from '../lib/tocHelper';
 import markdownToHtml from '../lib/parser';
-import { Center } from '@chakra-ui/react';
+import { Center, Container } from '@chakra-ui/react';
+import Markdown from '../components/markdown';
 
 const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (props.post === '') {
@@ -15,11 +16,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       </Center>
     );
   }
-  return (
-    <div className='md'>
-      <div dangerouslySetInnerHTML={{ __html: props.post }} />
-    </div>
-  );
+  return <Markdown content={props.post} />;
 };
 
 interface StaticHTMLProps {
@@ -42,7 +39,6 @@ export const getStaticProps: GetStaticProps<StaticHTMLProps> = async context => 
 
   if (Array.isArray(slug)) {
     const targetPath = path.join(DOCUMENT_ROOT, ...slug).concat('.md');
-    console.log(targetPath);
     try {
       const mdFileContent = fs.readFileSync(targetPath, 'utf8');
       const htmlContent = await markdownToHtml(mdFileContent);
