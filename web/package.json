@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "first-guide-for-beginners-server",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",

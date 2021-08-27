@@ -7,7 +7,7 @@ import Head from 'next/head';
 import Header from '../components/header';
 import Navigation from '../components/nav';
 import React from 'react';
-import fs from 'fs';
+import TABLE_OF_CONTENTS from '../lib/toc';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </header>
 
           <nav aria-labelledby='nav-title'>
-            <Navigation />
+            <Navigation tableOfContents={TABLE_OF_CONTENTS} />
           </nav>
 
           <main>
@@ -35,4 +35,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </ChakraProvider>
   );
 }
+
 export default MyApp;
